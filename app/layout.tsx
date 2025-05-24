@@ -4,6 +4,8 @@ import "./globals.css";
 
 import localFont from "next/font/local"
 import { siteConfig } from "./siteConfig";
+import { Navigation } from "@/components/layouts/Navbar";
+import Footer from "@/components/ui/Footer";
 //import ErrorBoundary from "@/components/shared/ErrorBoundary";
 
 
@@ -109,7 +111,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${matter.className} min-h-screen scroll-auto antialiased selection:bg-indigo-100 selection:text-indigo-700 dark:bg-gray-950`}
+        className={`${matter.className} min-h-screen scroll-auto antialiased selection:bg-cyan-400 selection:text-cyan-700 dark:bg-neutral-950`}
         >
           <ThemeProvider
             attribute="class"
@@ -117,9 +119,9 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             {/* <ErrorBoundary> */}
-            {/* <Navigation /> */}
+            <Navigation />
             {children}
-            {/* <Footer /> */}
+            <Footer />
 
             {/* </ErrorBoundary> */}
           </ThemeProvider>

@@ -1,13 +1,14 @@
 "use client"
 
 import { siteConfig } from "@/app/siteConfig"
-import useScroll from "@/lib/use-scroll"
+import useScroll from "@/lib/useScroll"
 import { cx } from "@/lib/utils"
 import { RiCloseLine, RiMenuLine } from "@remixicon/react"
 import Link from "next/link"
 import React from "react"
-import { DatabaseLogo } from "../../../public/DatabaseLogo"
+import { TroottLogo } from "@/public/TroottLogo"
 import { Button } from "../Button"
+
 
 export function Navigation() {
   const scrolled = useScroll(15)
@@ -41,7 +42,7 @@ export function Navigation() {
         <div className="relative flex items-center justify-between">
           <Link href={siteConfig.baseLinks.home} aria-label="Home">
             <span className="sr-only">Company logo</span>
-            <DatabaseLogo className="w-28 md:w-32" />
+            <TroottLogo className="w-28 md:w-32" />
           </Link>
           <nav className="hidden md:absolute md:left-1/2 md:top-1/2 md:block md:-translate-x-1/2 md:-translate-y-1/2 md:transform">
             <div className="flex items-center gap-10 font-medium">
