@@ -29,7 +29,7 @@
 
 @font-face {
     font-family: 'Matter-BoldItalic';
-    src: url('/fonts/matter/Matter-BlackItalic.ttf') format('truetype');
+    src: url('/fonts/matter/Matter-BoldItalic.ttf') format('truetype');
     font-weight: 700;
     font-style: italic;
     font-display: swap;
