@@ -11,7 +11,7 @@ export default function HeroSection() {
     >
       <h1
         id="hero-title"
-        className="inline-block animate-slide-up-fade bg-gradient-to-br from-gray-900 to-gray-800 bg-clip-text p-2 text-4xl font-bold tracking-tighter text-transparent sm:text-6xl md:text-7xl dark:from-gray-50 dark:to-gray-300"
+        className="inline-block animate-slide-up-fade bg-gradient-to-br from-neutral-900 to-neutral-800 bg-clip-text p-2 text-4xl font-bold tracking-tighter text-transparent sm:text-6xl md:text-7xl dark:from-gray-50 dark:to-gray-300"
         style={{ animationDuration: "700ms" }}
       >
       all the sermons you love <br /> in one place; easy to find, easy to listen to.
@@ -55,7 +55,7 @@ export default function HeroSection() {
       >
         <HeroImage />
         <div
-          className="absolute inset-x-0 -bottom-20 -mx-10 h-2/4 bg-gradient-to-t from-white via-white to-transparent lg:h-1/4 dark:from-gray-950 dark:via-gray-950"
+          className="absolute inset-x-0 -bottom-20 -mx-10 h-2/4 bg-gradient-to-t from-white via-white to-transparent lg:h-1/4 dark:from-neutral-950 dark:via-neutral-950"
           aria-hidden="true"
         />
       </div>
