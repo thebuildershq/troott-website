@@ -3,7 +3,7 @@ import * as Tabs from "@radix-ui/react-tabs"
 import { RiCodeSSlashLine, RiShapesLine } from "@remixicon/react"
 import Arrow from "../Arrow"
 
-export default function CodeExampleTabs({
+export default function Mission({
   tab1,
   tab2,
 }: {

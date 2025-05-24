@@ -41,12 +41,12 @@ const faqs = [
 export function Faqs() {
   return (
     <section className="mt-20 sm:mt-36" aria-labelledby="faq-title">
-      <div className="flex flex-col items-center justify-center text-center gap-10 px-4 max-w-4xl mx-auto">
+      <div className="flex flex-col items-center justify-center text-4xl text-center  sm:text-left sm:items-start sm:text-6xl md:text-7xl  gap-10 px-4 max-w-4xl mx-auto">
         
         <div className="">
           <h2
             id="faq-title"
-            className="inline-block scroll-my-24 bg-gradient-to-br from-gray-900 to-gray-800 bg-clip-text py-2 pr-2 text-5xl font-bold tracking-tighter text-transparent lg:text-5xl dark:from-gray-50 dark:to-gray-300"
+            className="inline-block scroll-my-24 bg-gradient-to-br from-gray-900 to-gray-800 bg-clip-text py-2 pr-2 text-5xl font-bold tracking-tighter text-transparent lg:text-5xl  dark:from-gray-50 dark:to-gray-300"
           >
             Frequently Asked Questions
           </h2>
