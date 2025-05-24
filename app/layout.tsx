@@ -4,6 +4,8 @@ import "./globals.css";
 
 import localFont from "next/font/local"
 import { siteConfig } from "./siteConfig";
+//import ErrorBoundary from "@/components/shared/ErrorBoundary";
+
 
 const matter = localFont({
   src: [
@@ -114,9 +116,12 @@ export default function RootLayout({
             defaultTheme="system"
             disableTransitionOnChange
           >
+            {/* <ErrorBoundary> */}
             {/* <Navigation /> */}
             {children}
             {/* <Footer /> */}
+
+            {/* </ErrorBoundary> */}
           </ThemeProvider>
         </body>
     </html>
