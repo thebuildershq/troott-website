@@ -1,6 +1,6 @@
 "use client"
 
-import ThemedImage from "./ThemedImage"
+import ThemedImage from "../layouts/ThemedImage"
 
 export default function HeroImage() {
   return (

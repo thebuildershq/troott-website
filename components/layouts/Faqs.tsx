@@ -41,11 +41,12 @@ const faqs = [
 export function Faqs() {
   return (
     <section className="mt-20 sm:mt-36" aria-labelledby="faq-title">
-      <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-14">
-        <div className="col-span-full sm:col-span-5">
+      <div className="flex flex-col items-center justify-center text-center gap-10 px-4 max-w-4xl mx-auto">
+        
+        <div className="">
           <h2
             id="faq-title"
-            className="inline-block scroll-my-24 bg-gradient-to-br from-gray-900 to-gray-800 bg-clip-text py-2 pr-2 text-2xl font-bold tracking-tighter text-transparent lg:text-3xl dark:from-gray-50 dark:to-gray-300"
+            className="inline-block scroll-my-24 bg-gradient-to-br from-gray-900 to-gray-800 bg-clip-text py-2 pr-2 text-5xl font-bold tracking-tighter text-transparent lg:text-5xl dark:from-gray-50 dark:to-gray-300"
           >
             Frequently Asked Questions
           </h2>
@@ -54,29 +55,31 @@ export function Faqs() {
             hesitate to get in touch with our{" "}
             <a
               href="#"
-              className="font-medium text-indigo-600 hover:text-indigo-300 dark:text-indigo-400"
+              className="font-medium text-teal-600 hover:text-teal-300 dark:text-teal-400"
             >
               customer support
             </a>{" "}
             team.
           </p>
         </div>
-        <div className="col-span-full mt-6 lg:col-span-7 lg:mt-0">
+
+        <div className="border border-neutral-300 dark:border-neutral-900 rounded-md w-full text-left p-10">
           <Accordion type="multiple" className="mx-auto">
             {faqs.map((item) => (
               <AccordionItem
                 value={item.question}
                 key={item.question}
-                className="py-3 first:pb-3 first:pt-0"
+                className="py-3  first:pb-3 first:pt-0"
               >
                 <AccordionTrigger>{item.question}</AccordionTrigger>
-                <AccordionContent className="text-gray-600 dark:text-gray-400">
+                <AccordionContent className="text-neutral-600 dark:text-neutral-400">
                   {item.answer}
                 </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
         </div>
+        
       </div>
     </section>
   )
