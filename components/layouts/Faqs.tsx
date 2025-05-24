@@ -11,7 +11,7 @@ const faqs = [
     question:
       "How secure is the database software in terms of protecting sensitive data?",
     answer:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat",
+      "Lorem ipsum dolor sit amet, consetetur sdipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat",
   },
   {
     question: "Can the database be self-hosted?",
