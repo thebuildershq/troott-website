@@ -51,8 +51,7 @@ export function Faqs() {
             Frequently Asked Questions
           </h2>
           <p className="mt-4 text-base leading-7 text-gray-600 dark:text-gray-400">
-            Can&rsquo;t find the answer you&rsquo;re looking for? Don&rsquo;t
-            hesitate to get in touch with our{" "}
+          Need help with something? Here are some of the most common questions we get.
             <a
               href="#"
               className="font-medium text-teal-600 hover:text-teal-300 dark:text-teal-400"
