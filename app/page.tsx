@@ -1,7 +1,7 @@
-import CTASection from "@/components/layouts/CallToAction";
-import { Faqs } from "@/components/layouts/Faqs";
-import HeroSection from "@/components/layouts/Hero";
-import Mission from "@/components/layouts/Mission";
+import CTASection from "@/components/containers/CallToAction";
+import { Faqs } from "@/components/containers/Faqs";
+import HeroSection from "@/components/containers/Hero";
+import Mission from "@/components/containers/Mission";
 
 
 
