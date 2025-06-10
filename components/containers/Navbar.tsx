@@ -48,29 +48,29 @@ export function Navigation() {
             <div className="flex items-center gap-10 font-medium">
               <Link
                 className="px-2 py-1 text-gray-900 dark:text-gray-50"
-                href={siteConfig.baseLinks.about}
+                href={siteConfig.baseLinks.listeners}
               >
-                About
+                Listeners
               </Link>
               <Link
                 className="px-2 py-1 text-gray-900 dark:text-gray-50"
-                href={siteConfig.baseLinks.pricing}
+                href={siteConfig.baseLinks.preachers}
               >
-                Pricing
+                Preachers
               </Link>
               <Link
                 className="px-2 py-1 text-gray-900 dark:text-gray-50"
-                href={siteConfig.baseLinks.changelog}
+                href={siteConfig.baseLinks.faqs}
               >
-                Changelog
+                Faqs
               </Link>
             </div>
           </nav>
           <Button className="hidden h-10 font-semibold md:flex">
-            Book a demo
+            Start listening
           </Button>
           <div className="flex gap-x-2 md:hidden">
-            <Button>Book demo</Button>
+            <Button>Start listening</Button>
             <Button
               onClick={() => setOpen(!open)}
               variant="light"
@@ -92,13 +92,13 @@ export function Navigation() {
         >
           <ul className="space-y-4 font-medium">
             <li onClick={() => setOpen(false)}>
-              <Link href={siteConfig.baseLinks.about}>About</Link>
+              <Link href={siteConfig.baseLinks.listeners}>Listeners</Link>
             </li>
             <li onClick={() => setOpen(false)}>
-              <Link href={siteConfig.baseLinks.pricing}>Pricing</Link>
+              <Link href={siteConfig.baseLinks.preachers}>Preachers</Link>
             </li>
             <li onClick={() => setOpen(false)}>
-              <Link href={siteConfig.baseLinks.changelog}>Changelog</Link>
+              <Link href={siteConfig.baseLinks.faqs}>Faqs</Link>
             </li>
           </ul>
         </nav>
