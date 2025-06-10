@@ -1,4 +1,4 @@
-import { RiPlayCircleFill } from "@remixicon/react"
+import { RiUploadCloudFill } from "@remixicon/react"
 import Link from "next/link"
 import { Button } from "../Button"
 
@@ -26,26 +26,27 @@ export default function CTASection() {
         className="mt-8 flex w-full animate-slide-up-fade flex-col justify-center gap-3 px-3 sm:flex-row"
         style={{ animationDuration: "1100ms" }}
       >
-        <Button className="h-10 font-semibold">
+        <Button className="h-14 px-8 font-semibold md:h-12 md:px-6 text-base md:text-sm">
           <Link href="#">Start listening</Link>
         </Button>
         <Button
           asChild
           variant="secondary"
-          className="group gap-x-2 bg-transparent font-semibold hover:bg-transparent dark:bg-transparent hover:dark:bg-transparent"
+          
+          className="h-14 px-8 md:h-12 md:px-6 group gap-x-2 bg-transparent font-semibold hover:bg-transparent dark:bg-transparent hover:dark:bg-transparent"
         >
           <Link
             href="https://www.youtube.com/watch?v=QRZ_l7cVzzU"
             className="ring-1 ring-gray-200 sm:ring-0 dark:ring-gray-900"
             target="_blank"
           >
-            <span className="mr-1 flex size-6 items-center justify-center rounded-full bg-gray-50 transition-all group-hover:bg-gray-200 dark:bg-gray-800 dark:group-hover:bg-gray-700">
-              <RiPlayCircleFill
+            <span className="flex size-6 items-center justify-center rounded-full bg-gray-50 transition-all group-hover:bg-gray-200 dark:bg-gray-800 dark:group-hover:bg-gray-700">
+              <RiUploadCloudFill
                 aria-hidden="true"
-                className="size-5 shrink-0 text-gray-900 dark:text-gray-50"
+                className="size-4 shrink-0 text-gray-900 dark:text-gray-50"
               />
             </span>
-            See how it works
+            Upload sermons
           </Link>
         </Button>
       </div>
