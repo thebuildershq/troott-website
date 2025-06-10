@@ -4,8 +4,8 @@ import "./globals.css";
 
 import localFont from "next/font/local"
 import { siteConfig } from "./siteConfig";
-import { Navigation } from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
+import { Navigation } from "@/components/containers/Navbar";
+import Footer from "@/components/containers/Footer";
 //import ErrorBoundary from "@/components/shared/ErrorBoundary";
 
 
