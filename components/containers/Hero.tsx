@@ -1,9 +1,16 @@
+"use client"
+
 import { RiUploadCloudFill } from "@remixicon/react"
 import Link from "next/link"
 import { Button } from "../Button"
 import HeroImage from "../ui/HeroImage"
+import { useState } from "react"
+import Newsletter from "../comp-321"
 
 export default function HeroSection() {
+
+  const [dialogOpen, setDialogOpen] = useState(false)
+
   return (
     <section
       aria-labelledby="hero-title"
@@ -26,8 +33,12 @@ export default function HeroSection() {
         className="mt-8 flex w-full animate-slide-up-fade flex-col justify-center gap-3 px-3 sm:flex-row"
         style={{ animationDuration: "1100ms" }}
       >
-        <Button className="h-14 px-8 font-semibold md:h-12 md:px-6 text-base md:text-sm">
+        <Button className="h-14 px-8 font-semibold md:h-12 md:px-6 text-base md:text-sm"
+          onClick={() => setDialogOpen(true)}
+        >
           <Link href="#">Start listening</Link>
+
+          
         </Button>
         <Button
           asChild
@@ -50,6 +61,9 @@ export default function HeroSection() {
           </Link>
         </Button>
       </div>
+      <Newsletter open={dialogOpen} onOpenChange={setDialogOpen} />
+      
+
       <div
         className="relative mx-auto ml-3 mt-20 h-fit w-[40rem] max-w-6xl animate-slide-up-fade sm:ml-auto sm:w-full sm:px-2"
         style={{ animationDuration: "1400ms" }}
