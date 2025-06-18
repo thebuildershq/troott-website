@@ -1,7 +1,5 @@
 import { CalendarIcon, FileTextIcon } from "@radix-ui/react-icons";
 import { BellIcon, Share2Icon } from "lucide-react";
-
-import { Calendar } from "@/components/ui/calendar";
 import { cx } from "@/lib/utils";
 import AnimatedBeamMultipleOutputDemo from "../magicui/animated-beam-outputs";
 import AnimatedListDemo from "../magicui/animated-list-demo";
@@ -9,6 +7,18 @@ import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import { Marquee } from "@/components/magicui/marquee";
 import Image from "next/image";
 
+
+const Icons = {
+  playlist: () => (
+    <Image
+      src="/images/playlist.png"
+      alt="Troott Logo"
+      width={100}
+      height={100}
+      unoptimized
+    />
+  ),
+}
 const files = [
   {
     src: "/images/apst-joshua-selman.jpg",
@@ -45,8 +55,8 @@ const files = [
 const features = [
   {
     Icon: FileTextIcon,
-    name: "Save your files",
-    description: "We automatically save your files as you type.",
+    name: "Preachers you love",
+    description: "Easy to find preachers, just tap and listen.",
     href: "",
     cta: "",
     className: "col-span-3 lg:col-span-1",
@@ -102,24 +112,22 @@ const features = [
   },
   {
     Icon: CalendarIcon,
-    name: "Calendar",
-    description: "Use the calendar to filter your files by date.",
-    className: "col-span-3 lg:col-span-1",
+    name: "Create your playlist",
+    description: "Your fave sermons, anytime you want them",
+    className: "col-span-3 lg:col-span-1 w-full h-full flex justify-end items-end px-10 ",
     href: "",
     cta: "",
     background: (
-      <Calendar
-        mode="single"
-        selected={new Date(2022, 4, 11, 0, 0, 0)}
-        className="absolute right-0 top-10 origin-top scale-75 rounded-md border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-90"
-      />
+      <Icons.playlist />
     ),
   },
 ];
 
+
+
 export function BentoDemo() {
   return (
-    <div className="">
+    <div className="sm:mx-30">
       <BentoGrid>
         {features.map((feature, idx) => (
           <BentoCard key={idx} {...feature} />
