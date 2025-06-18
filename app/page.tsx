@@ -17,13 +17,12 @@ export default function Home() {
       
       <BentoDemo  />
       
-      
-
       <TextSection/>
 
       <Mission/>
       
       <Faqs/>
+      
       <CTASection/>
     </main>
   );

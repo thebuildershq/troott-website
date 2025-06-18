@@ -1,9 +1,12 @@
-import { RiUploadCloudFill } from "@remixicon/react"
+import { RiPlayCircleFill, RiUploadCloudFill } from "@remixicon/react"
 import Link from "next/link"
 import { Button } from "../Button"
+import { useState } from "react";
+import Newsletter from "../comp-321";
 
 
 export default function CTASection() {
+  const [dialogOpen, setDialogOpen] = useState(false);
   return (
     <section
       aria-labelledby="hero-title"
@@ -26,13 +29,24 @@ export default function CTASection() {
         className="mt-8 flex w-full animate-slide-up-fade flex-col justify-center gap-3 px-3 sm:flex-row"
         style={{ animationDuration: "1100ms" }}
       >
-        <Button className="h-14 px-8 font-semibold md:h-12 md:px-6 text-base md:text-sm">
-          <Link href="#">Start listening</Link>
+        <Button
+          className="h-14 px-8 group gap-x-2 font-semibold md:h-12 md:px-6 text-base md:text-sm"
+          onClick={() => setDialogOpen(true)}
+        >
+          <Link href="#" className="flex items-center gap-x-2">
+            <span className="flex size-6 items-center justify-center rounded-full bg-gray-50 transition-all group-hover:bg-gray-200 dark:bg-gray-800 dark:group-hover:bg-gray-700">
+              <RiPlayCircleFill
+                aria-hidden="true"
+                className="size-4 shrink-0 text-gray-900 dark:text-gray-50"
+              />
+            </span>
+            Start listening
+          </Link>
         </Button>
+
         <Button
           asChild
           variant="secondary"
-          
           className="h-14 px-8 md:h-12 md:px-6 group gap-x-2 bg-transparent font-semibold hover:bg-transparent dark:bg-transparent hover:dark:bg-transparent"
         >
           <Link
@@ -46,10 +60,11 @@ export default function CTASection() {
                 className="size-4 shrink-0 text-gray-900 dark:text-gray-50"
               />
             </span>
-            Upload sermons
+            Upload your sermons
           </Link>
         </Button>
       </div>
+      <Newsletter open={dialogOpen} onOpenChange={setDialogOpen} />
     </section>
   )
 }
