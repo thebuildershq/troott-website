@@ -109,6 +109,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       className,
       disabled,
       variant,
+      
       children,
       ...props
     }: ButtonProps,

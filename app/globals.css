@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @font-face {
     font-family: 'Matter-Heavy';
     src: url('/fonts/matter/Matter-Heavy.ttf') format('truetype');
@@ -137,13 +136,12 @@
     font-family: 'Matter-LightItalic';
   }
 
-
   /* classes */
 .backdrop-blur {
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
   }
-  
+
   .backdrop-blur-nav {
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
@@ -152,7 +150,7 @@
     counter-reset: step;
     counter-increment: step 0;
   }
-  
+
   code .line::before {
     content: counter(step);
     counter-increment: step;
@@ -161,24 +159,59 @@
   .mask {
     mask-image: radial-gradient(rgba(0, 0, 0, 1) 0%, transparent 80%);
   }
-  
+
   a {
     @apply scroll-my-24 decoration-gray-400 transition-all;
   }
-  
+
   .anchor-link {
     @apply invisible absolute -ml-4 w-3/4 max-w-2xl cursor-pointer pr-2 no-underline;
   }
-  
+
   .anchor-link:hover {
     @apply visible;
   }
-  
+
   .anchor-link:after {
     @apply text-gray-400 dark:text-gray-600;
     content: "#";
   }
-  
+
   *:hover > .anchor-link {
     @apply visible;
   }
+
+  @layer base {
+  .theme {
+        --animate-marquee: marquee var(--duration) infinite linear;
+        --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+    }
+}
+
+  @layer base {
+  * {
+    @apply border-border;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+}
+
+  @theme inline {
+  @keyframes marquee {
+  from {
+    transform: translateX(0);
+        }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+        }
+    }
+  @keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+        }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+        }
+    }
+}
