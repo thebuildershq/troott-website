@@ -1,3 +1,4 @@
+"use client";
 import { RiPlayCircleFill, RiUploadCloudFill } from "@remixicon/react"
 import Link from "next/link"
 import { Button } from "../Button"
