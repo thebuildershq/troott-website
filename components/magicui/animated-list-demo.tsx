@@ -14,30 +14,30 @@ interface Item {
 
 let notifications = [
   {
-    name: "Payment received",
-    description: "Magic UI",
+    name: "God's battle Axe",
+    description: "Apostle Femi Lazarus",
     time: "15m ago",
 
     icon: "💸",
     color: "#00C9A7",
   },
   {
-    name: "User signed up",
-    description: "Magic UI",
+    name: "My Life Partner",
+    description: "Pst Funke Adejumo",
     time: "10m ago",
     icon: "👤",
     color: "#FFB800",
   },
   {
-    name: "New message",
-    description: "Magic UI",
+    name: "Leading your world",
+    description: "Apostle JesuDamilare-David",
     time: "5m ago",
     icon: "💬",
     color: "#FF3D71",
   },
   {
-    name: "New event",
-    description: "Magic UI",
+    name: "The Grace called favour",
+    description: "Apostle Joshua Selman",
     time: "2m ago",
     icon: "🗞️",
     color: "#1E86FF",

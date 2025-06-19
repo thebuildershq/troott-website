@@ -189,7 +189,7 @@ export default function Footer() {
                 <div className="absolute inset-1 rounded-full bg-emerald-600 dark:bg-emerald-500" />
               </div>
               <span className="text-xs text-gray-700 dark:text-gray-50">
-                Launching soon!
+                priavete alpha
               </span>
             </div>
           </div>
