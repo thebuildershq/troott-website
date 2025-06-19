@@ -71,8 +71,11 @@ export default function AnimatedBeamMultipleOutputDemo({
           <Circle ref={div3Ref}>
             <Icons.fourty />
           </Circle>
-          <Circle ref={div4Ref}>
+          <Circle ref={div4Ref} className="relative">
+          <div className="h-10 rounded-full overflow-hidden">
             <Icons.isa />
+  
+          </div>
           </Circle>
           <Circle ref={div5Ref}>
             <Icons.bave />
@@ -145,11 +148,11 @@ const Icons = {
   ),
   isa: () => (
     <Image
-      src="/images/abubakar-isa"
+      src="/images/abubakar-isa.jpg"
       alt="Troott Logo"
       unoptimized
       fill
-      className="object-cover"
+      className=" overflow-hidden object-cover"
     />
   ),
   jay: () => (

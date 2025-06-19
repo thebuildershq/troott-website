@@ -1,5 +1,4 @@
-import { CalendarIcon, FileTextIcon } from "@radix-ui/react-icons";
-import { BellIcon, Share2Icon } from "lucide-react";
+import { BellIcon, LibraryBigIcon, Share2Icon, UserRoundCheckIcon } from "lucide-react";
 import { cx } from "@/lib/utils";
 import AnimatedBeamMultipleOutputDemo from "../magicui/animated-beam-outputs";
 import AnimatedListDemo from "../magicui/animated-list-demo";
@@ -16,6 +15,7 @@ const Icons = {
       width={100}
       height={100}
       unoptimized
+      className="absolute top-10 w-full h-full flex justify-end items-end px-10 [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)]"
     />
   ),
 }
@@ -54,7 +54,7 @@ const files = [
 
 const features = [
   {
-    Icon: FileTextIcon,
+    Icon: UserRoundCheckIcon,
     name: "Preachers you love",
     description: "Easy to find preachers, just tap and listen.",
     href: "",
@@ -102,7 +102,7 @@ const features = [
   {
     Icon: Share2Icon,
     name: "Share with loved ones",
-    description: "Inspire your friends and family with one tap.",
+    description: "Inspire your friends & family with one tap.",
     href: "",
     cta: "",
     className: "col-span-3 lg:col-span-2",
@@ -111,23 +111,23 @@ const features = [
     ),
   },
   {
-    Icon: CalendarIcon,
+    Icon: LibraryBigIcon,
     name: "Create your playlist",
     description: "Your fave sermons, anytime you want them",
-    className: "col-span-3 lg:col-span-1 w-full h-full flex justify-end items-end px-10 ",
+    className: "col-span-3 lg:col-span-1",
     href: "",
     cta: "",
     background: (
-      <Icons.playlist />
+      <Icons.playlist/>
     ),
   },
 ];
 
-
+// className=""
 
 export function BentoDemo() {
   return (
-    <div className=" mb-10 mx-0 sm:mx-52">
+    <div className="mb-10 mx-2 sm:mx-52">
       <BentoGrid>
         {features.map((feature, idx) => (
           <BentoCard key={idx} {...feature} />

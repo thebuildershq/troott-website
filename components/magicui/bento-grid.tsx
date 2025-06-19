@@ -17,6 +17,7 @@ interface BentoCardProps extends ComponentPropsWithoutRef<"div"> {
   description: string;
   href: string;
   cta: string;
+  showCTA?: boolean;
 }
 
 const BentoGrid = ({ children, className, ...props }: BentoGridProps) => {
@@ -71,8 +72,10 @@ const BentoCard = ({
     >
       <Button variant="ghost" asChild size="sm" className="pointer-events-auto">
         <a href={href}>
-          {cta}
-          <ArrowRightIcon className="ms-2 h-4 w-4 rtl:rotate-180" />
+          {cta} 
+          {props.showCTA && (
+            <ArrowRightIcon className="ms-2 h-4 w-4 rtl:rotate-180" />
+          )}
         </a>
       </Button>
     </div>
