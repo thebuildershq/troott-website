@@ -18,13 +18,14 @@ export default function CTASection() {
         className="inline-block animate-slide-up-fade bg-gradient-to-br from-neutral-900 to-neutral-800 bg-clip-text p-2 text-4xl font-bold tracking-tighter text-transparent sm:text-6xl md:text-7xl dark:from-gray-50 dark:to-gray-300"
         style={{ animationDuration: "700ms" }}
       >
-      Step into the future of <br /> faith. Help us build Troott <br /> shape community.
+        
+      Hundreds of sermons <br/> are waiting for you.
       </h1>
       <p
-        className="mt-6 max-w-lg animate-slide-up-fade text-lg text-gray-700 dark:text-gray-400"
+        className="mt-6 max-w-xl animate-slide-up-fade text-lg text-gray-700 dark:text-gray-400"
         style={{ animationDuration: "900ms" }}
       >
-        Join the waitlist today or secure your spot with a payment. Your support helps bring Troott to life and grow our community.
+        Join thousands who are ready to use sermons on troott to fellowship and grow their faith  all week long. Click to get early access!
       </p>
       <div
         className="mt-8 flex w-full animate-slide-up-fade flex-col justify-center gap-3 px-3 sm:flex-row"
