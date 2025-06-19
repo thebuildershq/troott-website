@@ -9,7 +9,7 @@ export default function Mission() {
   return (
     <section
       aria-labelledby="code-example-title"
-      className="mx-auto mt-28 w-full max-w-6xl px-3"
+      className="mx-auto mt-10 sm:mt-28 w-full max-w-6xl px-3"
     >
       <Badge>Grow your reach</Badge>
       <h2
