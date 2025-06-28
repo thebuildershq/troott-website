@@ -5,18 +5,18 @@ import ThemedImage from "../containers/ThemedImage"
 export default function HeroImage() {
   return (
     <section aria-label="Hero Image of the website" className="flow-root">
-      <div className="rounded-2xl bg-slate-50/40 p-2 ring-1 ring-inset ring-slate-200/50 dark:bg-gray-900/70 dark:ring-white/10">
+      {/* <div className="rounded-2xl bg-slate-50/40 p-2 ring-1 ring-inset ring-slate-200/50 dark:bg-gray-900/70 dark:ring-white/10"> */}
         <div className="rounded-xl bg-white ring-1 ring-slate-900/5 dark:bg-slate-950 dark:ring-white/15">
           <ThemedImage
-            lightSrc="/images/coming-soon.png"
-            darkSrc="/images/coming-soon.png"
+            lightSrc="/images/hero-image.png"
+            darkSrc="/images/hero-image.png"
             alt="A preview of troott"
             width={2400}
             height={1600}
-            className="rounded-xl shadow-2xl dark:shadow-indigo-600/10"
+            className="rounded-xl shadow-2xl dark:shadow-neutral-600/10"
           />
         </div>
-      </div>
+      {/* </div> */}
     </section>
   )
 }
