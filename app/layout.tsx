@@ -6,7 +6,6 @@ import localFont from "next/font/local"
 import { siteConfig } from "./siteConfig";
 import { Navigation } from "@/components/containers/Navbar";
 import Footer from "@/components/containers/Footer";
-//import ErrorBoundary from "@/components/shared/ErrorBoundary";
 
 
 const matter = localFont({
