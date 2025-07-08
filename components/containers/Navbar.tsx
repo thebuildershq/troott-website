@@ -1,108 +1,193 @@
-"use client"
+"use client";
 
-import { siteConfig } from "@/app/siteConfig"
-import useScroll from "@/lib/useScroll"
-import { cx } from "@/lib/utils"
-import { RiCloseLine, RiMenuLine } from "@remixicon/react"
-import Link from "next/link"
-import React from "react"
-import { TroottLogo } from "@/public/TroottLogo"
-import { Button } from "../Button"
-
+import { siteConfig } from "@/app/siteConfig";
+import useScroll from "@/lib/useScroll";
+import { cx } from "@/lib/utils";
+import {
+  RiCloseLine,
+  RiMenuLine,
+  RiPlayCircleFill,
+  RiUploadCloudFill,
+  RiTwitterXLine,
+  RiLinkedinLine,
+} from "@remixicon/react";
+import Link from "next/link";
+import React from "react";
+import { TroottLogo } from "@/public/TroottLogo";
+import { Button } from "../Button";
+import MobileLink from "./MobileLink";
 
 export function Navigation() {
-  const scrolled = useScroll(15)
-  const [open, setOpen] = React.useState(false)
+  const scrolled = useScroll(15);
+  const [open, setOpen] = React.useState(false);
 
   React.useEffect(() => {
-    const mediaQuery: MediaQueryList = window.matchMedia("(min-width: 768px)")
+    const mediaQuery = window.matchMedia("(min-width: 768px)");
     const handleMediaQueryChange = () => {
-      setOpen(false)
-    }
+      setOpen(false);
+    };
 
-    mediaQuery.addEventListener("change", handleMediaQueryChange)
-    handleMediaQueryChange()
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+    handleMediaQueryChange();
 
     return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange)
-    }
-  }, [])
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
+  }, []);
 
   return (
-    <header
-      className={cx(
-        "fixed inset-x-3 top-4 z-50 mx-auto flex max-w-6xl transform-gpu animate-slide-down-fade justify-center overflow-hidden rounded-xl border border-transparent px-3 py-3 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1.03)] will-change-transform",
-        open === true ? "h-52" : "h-16",
-        scrolled || open === true
-          ? "backdrop-blur-nav max-w-3xl border-gray-100 bg-white/80 shadow-xl shadow-black/5 dark:border-white/15 dark:bg-black/70"
-          : "bg-white/0 dark:bg-gray-950/0",
-      )}
-    >
-      <div className="w-full md:my-auto">
-        <div className="relative flex items-center justify-between">
-          <Link href={siteConfig.baseLinks.home} aria-label="Home">
-            <span className="sr-only">Company logo</span>
-            <TroottLogo className="w-28 md:w-32" />
-          </Link>
-          <nav className="hidden md:absolute md:left-1/2 md:top-1/2 md:block md:-translate-x-1/2 md:-translate-y-1/2 md:transform">
-            <div className="flex items-center gap-10 font-medium">
-              <Link
-                className="px-2 py-1 text-gray-900 dark:text-gray-50"
-                href={siteConfig.baseLinks.listeners}
-              >
-                Listeners
-              </Link>
-              <Link
-                className="px-2 py-1 text-gray-900 dark:text-gray-50"
-                href={siteConfig.baseLinks.preachers}
-              >
-                Preachers
-              </Link>
-              <Link
-                className="px-2 py-1 text-gray-900 dark:text-gray-50"
-                href={siteConfig.baseLinks.faqs}
-              >
-                Faqs
-              </Link>
-            </div>
-          </nav>
-          <Button className="hidden h-10 font-semibold md:flex">
-            Start listening
-          </Button>
-          <div className="flex gap-x-2 md:hidden">
-            <Button>Start listening</Button>
-            <Button
-              onClick={() => setOpen(!open)}
-              variant="light"
-              className="aspect-square p-2"
-            >
-              {open ? (
-                <RiCloseLine aria-hidden="true" className="size-5" />
-              ) : (
-                <RiMenuLine aria-hidden="true" className="size-5" />
-              )}
+    <>
+      {/* Main Navbar */}
+      <header
+        className={cx(
+          "fixed inset-x-3 top-4 z-50 mx-auto flex max-w-6xl transform-gpu animate-slide-down-fade justify-center overflow-hidden rounded-xl border border-transparent px-3 py-3 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1.03)] will-change-transform",
+          "h-16", // fixed height
+          scrolled || open
+            ? "backdrop-blur-nav max-w-3xl border-gray-100 bg-white/80 shadow-xl shadow-black/5 dark:border-white/15 dark:bg-black/70"
+            : "bg-white/0 dark:bg-gray-950/0"
+        )}
+      >
+        <div className="w-full md:my-auto">
+          <div className="relative flex items-center justify-between">
+            <Link href={siteConfig.baseLinks.home} aria-label="Home">
+              <span className="sr-only">Company logo</span>
+              <TroottLogo className="w-28 md:w-32" />
+            </Link>
+
+            {/* Desktop Nav */}
+            <nav className="hidden md:absolute md:left-1/2 md:top-1/2 md:block md:-translate-x-1/2 md:-translate-y-1/2 md:transform">
+              <div className="flex items-center gap-10 font-medium">
+                <Link
+                  className="px-2 py-1"
+                  href={siteConfig.baseLinks.listeners}
+                >
+                  Listeners
+                </Link>
+                <Link
+                  className="px-2 py-1"
+                  href={siteConfig.baseLinks.preachers}
+                >
+                  Preachers
+                </Link>
+                <Link className="px-2 py-1" href={siteConfig.baseLinks.faqs}>
+                  Faqs
+                </Link>
+              </div>
+            </nav>
+
+            {/* Desktop CTA */}
+            <Button className="hidden h-10 font-semibold md:flex">
+              Start listening
             </Button>
+
+            {/* Mobile Buttons */}
+            <div className="flex gap-x-2 md:hidden">
+              <Button
+                onClick={() => setOpen(!open)}
+                variant="light"
+                className="aspect-square p-2"
+              >
+                {open ? (
+                  <RiCloseLine aria-hidden="true" className="size-5" />
+                ) : (
+                  <RiMenuLine aria-hidden="true" className="size-5" />
+                )}
+              </Button>
+            </div>
           </div>
         </div>
-        <nav
-          className={cx(
-            "my-6 flex text-lg ease-in-out will-change-transform md:hidden",
-            open ? "" : "hidden",
-          )}
-        >
-          <ul className="space-y-4 font-medium">
-            <li onClick={() => setOpen(false)}>
-              <Link href={siteConfig.baseLinks.listeners}>Listeners</Link>
-            </li>
-            <li onClick={() => setOpen(false)}>
-              <Link href={siteConfig.baseLinks.preachers}>Preachers</Link>
-            </li>
-            <li onClick={() => setOpen(false)}>
-              <Link href={siteConfig.baseLinks.faqs}>Faqs</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-  )
+      </header>
+
+      {/* Mobile Fullscreen Menu */}
+      {open && (
+        <div className="fixed inset-0 z-40 bg-white dark:bg-black flex flex-col justify-center px-6 text-xl font-semibold  md:hidden">
+          <div className="space-y-1 divide-y divide-teal-100 dark:divide-teal-800 mt-36">
+            <MobileLink
+              href={siteConfig.baseLinks.listeners}
+              onClick={() => setOpen(false)}
+            >
+              Listeners
+            </MobileLink>
+            <MobileLink
+              href={siteConfig.baseLinks.preachers}
+              onClick={() => setOpen(false)}
+            >
+              Preachers
+            </MobileLink>
+            <MobileLink
+              href={siteConfig.baseLinks.faqs}
+              onClick={() => setOpen(false)}
+            >
+              Faqs
+            </MobileLink>
+          </div>
+
+          <div className="mt-8">
+            <div
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 px-3 animate-slide-up-fade"
+              style={{ animationDuration: "1100ms" }}
+            >
+              <Button
+                className="h-14 px-8 group gap-x-2 font-semibold text-base md:h-12 md:px-6 md:text-sm w-full sm:w-auto"
+                onClick={() => (true)}
+              >
+                <Link href="#" className="flex items-center gap-x-2">
+                  <span className="flex size-6 items-center justify-center rounded-full bg-gray-50 transition-all group-hover:bg-gray-200 dark:bg-gray-800 dark:group-hover:bg-gray-700">
+                    <RiPlayCircleFill
+                      aria-hidden="true"
+                      className="size-4 shrink-0 text-gray-900 dark:text-gray-50"
+                    />
+                  </span>
+                  Start listening
+                </Link>
+              </Button>
+
+              <Button
+                asChild
+                variant="secondary"
+                className="h-14 px-8 md:h-12 md:px-6 group gap-x-2 bg-transparent font-semibold hover:bg-transparent dark:bg-transparent hover:dark:bg-transparent w-full sm:w-auto"
+              >
+                <Link
+                  href="https://www.youtube.com/watch?v=QRZ_l7cVzzU"
+                  className="flex items-center gap-x-2 ring-1 ring-gray-200 dark:ring-gray-900 sm:ring-0"
+                  target="_blank"
+                >
+                  <span className="flex size-6 items-center justify-center rounded-full bg-gray-50 transition-all group-hover:bg-gray-200 dark:bg-gray-800 dark:group-hover:bg-gray-700">
+                    <RiUploadCloudFill
+                      aria-hidden="true"
+                      className="size-4 shrink-0 text-gray-900 dark:text-gray-50"
+                    />
+                  </span>
+                  Upload your sermons
+                </Link>
+              </Button>
+            </div>
+          </div>
+
+          {/* Mobile Footer */}
+          <div className="mt-auto flex items-center justify-between px-3 py-6 text-sm text-gray-500 dark:text-gray-400">
+            <span>© Troott</span>
+
+            <div className="flex gap-3">
+              <Link
+                href="https://x.com/troott"
+                target="_blank"
+                className="size-9 flex items-center justify-center rounded-md border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+              >
+                <RiTwitterXLine className="size-4 text-gray-700 dark:text-gray-200" />
+              </Link>
+              <Link
+                href="https://instagram.com"
+                target="_blank"
+                className="size-9 flex items-center justify-center rounded-md border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+              >
+                <RiLinkedinLine className="size-4 text-gray-700 dark:text-gray-200" />
+              </Link>
+              
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
 }

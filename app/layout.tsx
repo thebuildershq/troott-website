@@ -119,6 +119,7 @@ export default function RootLayout({
           >
             {/* <ErrorBoundary> */}
             <Navigation />
+            
             {children}
             <Footer />
 
