@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { ThemeProvider } from "next-themes"
+import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
-import localFont from "next/font/local"
+import localFont from "next/font/local";
 import { siteConfig } from "./siteConfig";
 import { Navigation } from "@/components/containers/Navbar";
 import Footer from "@/components/containers/Footer";
-
 
 const matter = localFont({
   src: [
@@ -68,8 +67,7 @@ const matter = localFont({
   ],
   variable: "--font-matter",
   display: "swap",
-})
-
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://troott.com"),
@@ -109,23 +107,30 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);};l=d.createElement(e);l.async=1;l.src=u;n=d.getElementsByTagName(e)[0];n.parentNode.insertBefore(l,n);})(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');ml('account', '1322097');`,
+          }}
+        />
+      </head>
       <body
         className={`${matter.className} min-h-screen p-4 scroll-auto antialiased selection:bg-cyan-400 selection:text-cyan-700 dark:bg-neutral-950`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          disableTransitionOnChange
         >
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            disableTransitionOnChange
-          >
-            {/* <ErrorBoundary> */}
-            <Navigation />
-            
-            {children}
-            <Footer />
+          {/* <ErrorBoundary> */}
+          <Navigation />
 
-            {/* </ErrorBoundary> */}
-          </ThemeProvider>
-        </body>
+          {children}
+          <Footer />
+
+          {/* </ErrorBoundary> */}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

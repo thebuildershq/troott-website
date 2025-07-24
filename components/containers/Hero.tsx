@@ -9,6 +9,7 @@ import Newsletter from "../comp-321";
 
 export default function HeroSection() {
   const [dialogOpen, setDialogOpen] = useState(false);
+  
 
   return (
     <section

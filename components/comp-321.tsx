@@ -7,6 +7,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import Image from "next/image";
@@ -16,6 +17,7 @@ import { cx } from "@/lib/utils";
 interface ISubscribeError {
   firstName?: string;
   email?: string;
+
 }
 interface ISubscribeDialog {
   open: boolean;
@@ -208,6 +210,19 @@ export default function Newsletter(data: ISubscribeDialog) {
                 <MailIcon size={16} aria-hidden="true" />
               </div>
             </div>
+
+            <div className="flex items-start gap-2">
+  <Checkbox id="privacy" />
+  <Label htmlFor="privacy" className="text-xs text-muted-foreground">
+    By subscribing you agree to our{" "}
+    <a href="#" className="underline hover:no-underline text-primary">
+      Privacy Policy
+    </a>
+    .
+  </Label>
+</div>
+
+
           
           <Button
             type="button"
@@ -234,13 +249,7 @@ export default function Newsletter(data: ISubscribeDialog) {
           </Button>
         </form>
 
-        <p className="text-muted-foreground text-center text-xs dark:text-gray-400">
-          By subscribing you agree to our{" "}
-          <a className="underline hover:no-underline dark:text-white" href="#">
-            Privacy Policy
-          </a>
-          .
-        </p>
+      
       </DialogContent>
     </Dialog>
   );
