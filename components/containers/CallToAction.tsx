@@ -3,7 +3,7 @@ import { RiPlayCircleFill, RiUploadCloudFill } from "@remixicon/react"
 import Link from "next/link"
 import { Button } from "../Button"
 import { useState } from "react";
-import Newsletter from "../comp-321";
+import Newsletter from "../NewsletterModal";
 
 
 export default function CTASection() {

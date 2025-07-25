@@ -26,6 +26,8 @@
     "@radix-ui/react-tooltip": "^1.2.7",
     "@remixicon/react": "^4.6.0",
     "@types/mdx": "^2.0.13",
+    "add": "^2.0.6",
+    "axios": "^1.11.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cobe": "^0.6.3",
@@ -38,9 +40,12 @@
     "react-day-picker": "^9.7.0",
     "react-dom": "19.0.0",
     "react-wrap-balancer": "^1.1.1",
+    "shadcn": "^2.9.3",
+    "sonner": "^2.0.6",
     "tailwind-merge": "^3.3.1",
     "tailwind-variants": "^1.0.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "toast": "^0.5.4"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

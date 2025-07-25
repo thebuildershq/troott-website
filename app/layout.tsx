@@ -6,6 +6,8 @@ import localFont from "next/font/local";
 import { siteConfig } from "./siteConfig";
 import { Navigation } from "@/components/containers/Navbar";
 import Footer from "@/components/containers/Footer";
+import { MailerLiteScript } from "@/public/scripts/ml";
+import { Toaster } from "sonner";
 
 const matter = localFont({
   src: [
@@ -108,11 +110,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);};l=d.createElement(e);l.async=1;l.src=u;n=d.getElementsByTagName(e)[0];n.parentNode.insertBefore(l,n);})(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');ml('account', '1322097');`,
-          }}
-        />
+        <MailerLiteScript/>
       </head>
       <body
         className={`${matter.className} min-h-screen p-4 scroll-auto antialiased selection:bg-cyan-400 selection:text-cyan-700 dark:bg-neutral-950`}
@@ -126,10 +124,12 @@ export default function RootLayout({
           <Navigation />
 
           {children}
+          <Toaster richColors position="top-center" />
           <Footer />
 
           {/* </ErrorBoundary> */}
         </ThemeProvider>
+
       </body>
     </html>
   );
