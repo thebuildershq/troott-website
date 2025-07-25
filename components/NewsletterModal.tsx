@@ -9,11 +9,12 @@ import {
 } from "@/components/ui/dialog";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Label } from "./Label";
 import { cx } from "@/lib/utils";
 import { toast } from "sonner";
+import { getUserLocation } from "@/lib/useLocation";
 
 
 
@@ -35,6 +36,7 @@ export default function Newsletter(data: ISubscribeDialog) {
     firstName: "",
     email: "",
     agree: false,
+    location: "",
   });
   
   const [errors, setErrors] = useState<ISubscribeError>({});
@@ -43,6 +45,15 @@ export default function Newsletter(data: ISubscribeDialog) {
     firstName: false,
     email: false,
   });
+
+    // 1) on mount, detect country
+  useEffect(() => {
+    getUserLocation().then((res) => {
+      if (!res.error && res.data.country_code) {
+        setFormData((f) => ({ ...f, location: res.data.country_name }));
+      }
+    });
+  }, []);
 
    const validateName = (name: string, fieldName: string): string | undefined => {
     if (!name) return `${fieldName} is required`;
@@ -77,10 +88,12 @@ export default function Newsletter(data: ISubscribeDialog) {
       setFormData((prev) => ({ ...prev, [field]: value }));
 
       // Clear error when user starts typing
-      if (errors[field]) {
+      if (field === 'firstName' || field === 'email' || field === 'agree') {
+        if (errors[field]) {
         setErrors((prev) => ({ ...prev, [field]: undefined }));
       }
     };
+  }
 
   const handleBlur = (field: keyof typeof formData) => () => {
     setTouched((prev) => ({ ...prev, [field]: true }));
@@ -121,7 +134,7 @@ export default function Newsletter(data: ISubscribeDialog) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email: formData.email, name: formData.firstName, consent: formData.agree ? "yes" : "no" }),
+        body: JSON.stringify({ email: formData.email, name: formData.firstName, consent: formData.agree ? "yes" : "no", location: formData.location }),
       });
 
       const data = await res.json();
@@ -139,7 +152,7 @@ export default function Newsletter(data: ISubscribeDialog) {
       onOpenChange(false);
 
       // Optionally reset form
-      setFormData({ firstName: "", email: "", agree: false });
+      setFormData({ firstName: "", email: "", agree: false, location: "" });
       setTouched({ firstName: false, email: false });
 
       console.log("Subscribed successfully");
@@ -246,6 +259,8 @@ export default function Newsletter(data: ISubscribeDialog) {
             </Label>
           </div>
 
+            <input type="hidden" value={formData.location} name="location" />
+            
           <Button
             type="button"
              disabled={ !formData.firstName || !formData.email || !formData.agree || isSubmitting }

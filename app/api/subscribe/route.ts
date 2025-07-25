@@ -2,12 +2,12 @@ import { NextRequest, NextResponse } from "next/server";
 import axios from "axios";
 
 export async function POST(req: NextRequest) {
-  const { email, name, consent } = await req.json();
+  const { email, name, consent, location } = await req.json();
 
   // Basic validation
-  if (!email || !name || !consent) {
+  if (!email || !name || !consent || !location) {
     return NextResponse.json(
-      { error: "Missing email, name, or consent" },
+      { error: "Missing email, name, consent, or location" },
       { status: 400 }
     );
   }
