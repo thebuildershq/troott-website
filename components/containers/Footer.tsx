@@ -5,10 +5,11 @@ import ThemeSwitch from "../ThemeSwitch"
 
 const navigation = {
   product: [
-    { name: "Preachers", href: "#", external: false },
-    { name: "Listeners", href: "", external: false },
-    { name: "Partners", href: "#", external: false },
-    { name: "Features", href: "#", external: false },
+    { name: "Preachers", href: "#preacher", external: false },
+    { name: "Listeners", href: "#listener", external: false },
+    { name: "faqs", href: "#faqs", external: false },
+
+    
     
   ],
   resources: [
@@ -19,15 +20,14 @@ const navigation = {
   ],
   company: [
     { name: "About", href: "#", external: false },
-    { name: "Careers", href: "#", external: true },
+    
     { name: "Contact", href: "#", external: false },
     { name: "Changelog", href: "#", external: false },
   ],
   legal: [
-    { name: "Imprint", href: "#", external: false },
     { name: "Privacy", href: "#", external: false },
     { name: "Terms", href: "#", external: false },
-    { name: "DPA", href: "#", external: false },
+    
   ],
 }
 
