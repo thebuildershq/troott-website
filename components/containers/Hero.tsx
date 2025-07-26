@@ -1,20 +1,17 @@
 "use client";
 
 import { RiPlayCircleFill, RiUploadCloudFill } from "@remixicon/react";
-import Link from "next/link";
 import { Button } from "../Button";
 import HeroImage from "../ui/HeroImage";
 import { useState } from "react";
 import Newsletter from "../NewsletterModal";
 
-
-
 export default function HeroSection() {
   const [dialogOpen, setDialogOpen] = useState(false);
-
- 
+  const [role, setRole] = useState<"listener" | "preacher" | null>(null);
 
   return (
+    <>
     <section className="mt-32 flex flex-col items-center justify-center text-center sm:mt-40">
       <h1
         id="hero-title"
@@ -49,31 +46,26 @@ export default function HeroSection() {
             </span>
             Start listening
           </span>
+          
         </Button>
 
         <Button
-          asChild
           variant="secondary"
           className="h-14 px-8 md:h-12 md:px-6 group gap-x-2 bg-transparent font-semibold hover:bg-transparent dark:bg-transparent hover:dark:bg-transparent"
+          onClick={() => {
+            setRole("preacher");
+            setDialogOpen(true);
+          }}
         >
-          <Link
-            href="https://www.youtube.com/watch?v=QRZ_l7cVzzU"
-            className="ring-1 ring-gray-200 sm:ring-0 dark:ring-gray-900"
-            target="_blank"
-          >
-            <span className="flex size-6 items-center justify-center rounded-full bg-gray-50 transition-all group-hover:bg-gray-200 dark:bg-gray-800 dark:group-hover:bg-gray-700">
-              <RiUploadCloudFill
-                aria-hidden="true"
-                className="size-4 shrink-0 text-gray-900 dark:text-gray-50"
-              />
-            </span>
-            Upload your sermons
-          </Link>
+          <span className="flex size-6 items-center justify-center rounded-full bg-gray-50 transition-all group-hover:bg-gray-200 dark:bg-gray-800 dark:group-hover:bg-gray-700">
+            <RiUploadCloudFill
+              aria-hidden="true"
+              className="size-4 shrink-0 text-gray-900 dark:text-gray-50"
+            />
+          </span>
+          Upload your sermons
         </Button>
       </div>
-
-      
-      
 
       <div
         className="relative mx-auto ml-3 mt-20 h-fit w-[40rem] max-w-6xl animate-slide-up-fade sm:ml-auto sm:w-full sm:px-2"
@@ -85,7 +77,8 @@ export default function HeroSection() {
           aria-hidden="true"
         />
       </div>
-      <Newsletter open={dialogOpen} onOpenChange={setDialogOpen} />
+      <Newsletter open={dialogOpen} onOpenChange={setDialogOpen} role={role} />
     </section>
+    </>
   );
 }
