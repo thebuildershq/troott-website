@@ -5,22 +5,23 @@ import ThemeSwitch from "../ThemeSwitch"
 
 const navigation = {
   product: [
-    { name: "Enterprise", href: "#", external: false },
-    { name: "Pricing", href: "/pricing", external: false },
-    { name: "Docs", href: "#", external: false },
-    { name: "Changelog", href: "/changelog", external: false },
+    { name: "Preachers", href: "#", external: false },
+    { name: "Listeners", href: "", external: false },
+    { name: "Partners", href: "#", external: false },
+    { name: "Features", href: "#", external: false },
+    
   ],
   resources: [
-    { name: "FAQs", href: "/pricing#faq-title", external: false },
-    { name: "GitHub", href: "#", external: true },
-    { name: "Discord", href: "#", external: true },
-    { name: "YouTube", href: "#", external: true },
+    { name: "X (Twitter)", href: "https://x.com/thetroott", external: true },
+    { name: "LinkedIn", href: "https://www.linkedin.com/company/troott", external: true },
+    { name: "Facebook", href: "#", external: true },
+    { name: "Instagram", href: "#", external: true },
   ],
   company: [
-    { name: "About", href: "/about", external: false },
+    { name: "About", href: "#", external: false },
     { name: "Careers", href: "#", external: true },
     { name: "Contact", href: "#", external: false },
-    { name: "Status", href: "#", external: false },
+    { name: "Changelog", href: "#", external: false },
   ],
   legal: [
     { name: "Imprint", href: "#", external: false },
@@ -38,8 +39,8 @@ export default function Footer() {
           <div className="space-y-8">
             <TroottLogo className="w-32 sm:w-40" />
             <p className="text-sm leading-6 text-gray-600 dark:text-gray-400">
-              Redefining the way databases are built and managed. Built in
-              Switzerland, made for the world.
+            Turning audio sermons into a tool for true discipleship. Built in
+              Ogbomoso, made for the world.
             </p>
             <div className="flex space-x-6">
               <ThemeSwitch />
@@ -189,7 +190,7 @@ export default function Footer() {
                 <div className="absolute inset-1 rounded-full bg-emerald-600 dark:bg-emerald-500" />
               </div>
               <span className="text-xs text-gray-700 dark:text-gray-50">
-                Launching soon!
+                private alpha
               </span>
             </div>
           </div>

@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { ThemeProvider } from "next-themes"
+import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
-import localFont from "next/font/local"
+import localFont from "next/font/local";
 import { siteConfig } from "./siteConfig";
-import { Navigation } from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
-//import ErrorBoundary from "@/components/shared/ErrorBoundary";
-
+import { Navigation } from "@/components/containers/Navbar";
+import Footer from "@/components/containers/Footer";
+import { MailerLiteScript } from "@/public/scripts/ml";
+import { Toaster } from "sonner";
 
 const matter = localFont({
   src: [
@@ -69,8 +69,7 @@ const matter = localFont({
   ],
   variable: "--font-matter",
   display: "swap",
-})
-
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://troott.com"),
@@ -110,22 +109,28 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <MailerLiteScript/>
+      </head>
       <body
-        className={`${matter.className} min-h-screen scroll-auto antialiased selection:bg-cyan-400 selection:text-cyan-700 dark:bg-neutral-950`}
+        className={`${matter.className} min-h-screen p-4 scroll-auto antialiased selection:bg-cyan-400 selection:text-cyan-700 dark:bg-neutral-950`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          disableTransitionOnChange
         >
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            disableTransitionOnChange
-          >
-            {/* <ErrorBoundary> */}
-            <Navigation />
-            {children}
-            <Footer />
+          {/* <ErrorBoundary> */}
+          <Navigation />
 
-            {/* </ErrorBoundary> */}
-          </ThemeProvider>
-        </body>
+          {children}
+          <Toaster richColors position="top-center" />
+          <Footer />
+
+          {/* </ErrorBoundary> */}
+        </ThemeProvider>
+
+      </body>
     </html>
   );
 }
