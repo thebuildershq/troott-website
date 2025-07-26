@@ -1,3 +1,5 @@
+'use client'
+
 import { BellIcon, LibraryBigIcon, Share2Icon, UserRoundCheckIcon } from "lucide-react";
 import { cx } from "@/lib/utils";
 import AnimatedBeamMultipleOutputDemo from "../magicui/animated-beam-outputs";
