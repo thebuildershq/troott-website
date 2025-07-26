@@ -3,7 +3,7 @@ import { TextReveal } from "../magicui/text-reveal";
 const PreText = () => {
   return (
   
-      <section className="relative min-h-[50vh]">
+      <section id="listener" className="relative min-h-[50vh]">
   <TextReveal>
     You want to grow spiritually. But first, you search once, twice and 
     countless time to find the sermon you wisht to hear? Not anymore. 

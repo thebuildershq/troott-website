@@ -21,31 +21,31 @@ const Icons = {
 }
 const files = [
   {
-    src: "/images/apst-joshua-selman.jpg",
+    src: "/images/apst-tolu-agboola.jpg",
+    alt:"Apostle Tolu Agboola",
+    width: 200,
+    height: 200,
+  },
+  {
+    src: "/images/apst-arome-osayi.jpg",
+    alt:"Apostle Arome Osayi",
+    width: 200,
+    height: 200,
+  },
+  {
+    src: "/images/rev-felix-adejumo.jpg",
+    alt:"Rev Funke Felix Adejumo",
+    width: 200,
+    height: 200,
+  },
+  {
+    src: "/images/apostle-jd.jpg",
     alt:"Apostle Joshua Selman",
     width: 200,
     height: 200,
   },
   {
-    src: "/images/apst-joshua-selman.jpg",
-    alt:"Apostle Joshua Selman",
-    width: 200,
-    height: 200,
-  },
-  {
-    src: "/images/apst-joshua-selman.jpg",
-    alt:"Apostle Joshua Selman",
-    width: 200,
-    height: 200,
-  },
-  {
-    src: "/images/apst-joshua-selman.jpg",
-    alt:"Apostle Joshua Selman",
-    width: 200,
-    height: 200,
-  },
-  {
-    src: "/images/apst-joshua-selman.jpg",
+    src: "/images/apst-joshua-selman-.jpg",
     alt:"Apostle Joshua Selman",
     width: 200,
     height: 200,
