@@ -8,7 +8,7 @@ import Newsletter from "../NewsletterModal";
 
 export default function HeroSection() {
   const [dialogOpen, setDialogOpen] = useState(false);
-  const [role, setRole] = useState<"listener" | "preacher" | null>(null);
+  const [role, setRole] = useState<"listener" | "preacher">("listener");
 
   return (
     <>
@@ -35,7 +35,10 @@ export default function HeroSection() {
       >
         <Button
           className="h-14 px-8 group gap-x-2 font-semibold md:h-12 md:px-6 text-base md:text-sm"
-          onClick={() => setDialogOpen(true)}
+          onClick={() => {
+            setRole("listener");
+            setDialogOpen(true);
+          }}
         >
           <span className="flex items-center gap-x-2">
             <span className="flex size-6 items-center justify-center rounded-full bg-gray-50 transition-all group-hover:bg-gray-200 dark:bg-gray-800 dark:group-hover:bg-gray-700">
@@ -77,7 +80,7 @@ export default function HeroSection() {
           aria-hidden="true"
         />
       </div>
-      <Newsletter open={dialogOpen} onOpenChange={setDialogOpen} role={role} />
+      <Newsletter open={dialogOpen} onOpenChange={setDialogOpen} user_type={role} />
     </section>
     </>
   );

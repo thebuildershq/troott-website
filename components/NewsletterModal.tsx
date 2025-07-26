@@ -24,10 +24,10 @@ interface ISubscribeError {
 interface ISubscribeDialog {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  role: "listener" | "preacher" | null;
+  user_type: "listener" | "preacher" ;
 }
 export default function Newsletter(data: ISubscribeDialog) {
-  const { open, onOpenChange, role } = data;
+  const { open, onOpenChange, user_type } = data;
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -139,8 +139,8 @@ export default function Newsletter(data: ISubscribeDialog) {
           email: formData.email,
           name: formData.firstName,
           consent: formData.agree ? "yes" : "no",
-          location: formData.location,
-          role: role,
+          country: formData.location,
+          user_type: user_type,
         }),
       });
 
@@ -278,7 +278,7 @@ export default function Newsletter(data: ISubscribeDialog) {
           </div>
 
           <input type="hidden" value={formData.location} name="location" />
-          <input type="hidden" name="role" value={data.role || ""} />
+          <input type="hidden" name="user_type" value={data.user_type || ""} />
 
           <Button
             type="button"

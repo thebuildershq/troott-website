@@ -2,12 +2,14 @@ import { NextRequest, NextResponse } from "next/server";
 import axios from "axios";
 
 export async function POST(req: NextRequest) {
-  const { email, name, consent, location, role } = await req.json();
+  const { email, name, consent, country, user_type } = await req.json();
+  console.log("Incoming subscribe data:", { email, name, consent, country, user_type });
+
 
   // Basic validation
-  if (!email || !name || !consent || !location || !role) {
+  if (!email || !name || !consent || !country || !user_type) {
     return NextResponse.json(
-      { error: "Missing email, name, consent, location, or role" },
+      { error: "Missing email, name, consent, country, or userType" },
       { status: 400 }
     );
   }
@@ -48,6 +50,11 @@ export async function POST(req: NextRequest) {
       {
         email,
         name,
+        fields: {
+          consent,
+          country: country,
+          user_type: user_type,
+        },
         resubscribe: true,
         ...(GROUP_ID && { groups: [GROUP_ID] }),
       },
