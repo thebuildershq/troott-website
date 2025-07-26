@@ -3,12 +3,15 @@ import { TextReveal } from "../magicui/text-reveal";
 const PreText = () => {
   return (
   
-      <TextReveal>
-        You want to grow spiritually. But first, you have to waste 20 minutes
-        digging through YouTube and Facebook to find a sermon worth hearing. Not
-        anymore. Troott puts every sermon you love old and new in your pocket.
-        Ad-free. Organised. Ready when you are.
-      </TextReveal>
+      <section className="relative min-h-[50vh]">
+  <TextReveal>
+    You want to grow spiritually. But first, you search once, twice and 
+    countless time to find the sermon you wisht to hear? Not anymore. 
+    Troott puts every sermon you love old and new in your pocket.
+    Ad-free. Organised. Ready when you are.
+  </TextReveal>
+</section>
+
     
   );
 };
