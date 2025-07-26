@@ -16,10 +16,13 @@ import React from "react";
 import { TroottLogo } from "@/public/TroottLogo";
 import { Button } from "../Button";
 import MobileLink from "./MobileLink";
+import Newsletter from "../NewsletterModal";
 
 export function Navigation() {
   const scrolled = useScroll(15);
   const [open, setOpen] = React.useState(false);
+   const [dialogOpen, setDialogOpen] = React.useState(false);
+  const [role, setRole] = React.useState<"listener" | "preacher">("listener");
 
   React.useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 768px)");
@@ -76,7 +79,11 @@ export function Navigation() {
             </nav>
 
             {/* Desktop CTA */}
-            <Button className="hidden h-10 font-semibold md:flex">
+            <Button  onClick={() => {
+            setRole("preacher");
+            setDialogOpen(true);
+
+          }} className="hidden h-10 font-semibold md:flex">
               Start listening
             </Button>
 
@@ -129,9 +136,13 @@ export function Navigation() {
             >
               <Button
                 className="h-14 px-8 group gap-x-2 font-semibold text-base md:h-12 md:px-6 md:text-sm w-full sm:w-auto"
-                onClick={() => (true)}
+                 onClick={() => {
+            setRole("listener");
+            setDialogOpen(true);
+
+          }}
               >
-                <Link href="#" className="flex items-center gap-x-2">
+                
                   <span className="flex size-6 items-center justify-center rounded-full bg-gray-50 transition-all group-hover:bg-gray-200 dark:bg-gray-800 dark:group-hover:bg-gray-700">
                     <RiPlayCircleFill
                       aria-hidden="true"
@@ -139,19 +150,20 @@ export function Navigation() {
                     />
                   </span>
                   Start listening
-                </Link>
+                
               </Button>
 
               <Button
-                asChild
+                
+                 onClick={() => {
+            setRole("preacher");
+            setDialogOpen(true);
+
+          }}
                 variant="secondary"
                 className="h-14 px-8 md:h-12 md:px-6 group gap-x-2 bg-transparent font-semibold hover:bg-transparent dark:bg-transparent hover:dark:bg-transparent w-full sm:w-auto"
               >
-                <Link
-                  href="https://www.youtube.com/watch?v=QRZ_l7cVzzU"
-                  className="flex items-center gap-x-2 ring-1 ring-gray-200 dark:ring-gray-900 sm:ring-0"
-                  target="_blank"
-                >
+                
                   <span className="flex size-6 items-center justify-center rounded-full bg-gray-50 transition-all group-hover:bg-gray-200 dark:bg-gray-800 dark:group-hover:bg-gray-700">
                     <RiUploadCloudFill
                       aria-hidden="true"
@@ -159,7 +171,7 @@ export function Navigation() {
                     />
                   </span>
                   Upload your sermons
-                </Link>
+                
               </Button>
             </div>
           </div>
@@ -188,6 +200,8 @@ export function Navigation() {
           </div>
         </div>
       )}
+
+      <Newsletter open={dialogOpen} onOpenChange={setDialogOpen} user_type={role} />
     </>
   );
 }
