@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import { BellIcon, LibraryBigIcon, Share2Icon, UserRoundCheckIcon } from "lucide-react";
 import { cx } from "@/lib/utils";
@@ -129,7 +129,7 @@ const features = [
 
 export function BentoDemo() {
   return (
-    <div className="mb-10 mx-2 md:mx-96">
+    <div className="mb-10 mx-2 sm:mxsm:mx-12 md:mx-24 lg:mx-96">
       <BentoGrid>
         {features.map((feature, idx) => (
           <BentoCard key={idx} {...feature} />
