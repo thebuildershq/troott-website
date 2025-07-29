@@ -1,7 +1,6 @@
 import { RiArrowRightUpLine } from "@remixicon/react"
 import Link from "next/link"
 import { TroottLogo } from "@/public/TroottLogo"
-import ThemeSwitch from "../ThemeSwitch"
 
 const navigation = {
   product: [
@@ -42,9 +41,9 @@ export default function Footer() {
             Turning audio sermons into a tool for true discipleship. Built in
               Ogbomoso, made for the world.
             </p>
-            <div className="flex space-x-6">
+            {/* <div className="flex space-x-6">
               <ThemeSwitch />
-            </div>
+            </div> */}
             <div></div>
           </div>
           <div className="mt-16 grid grid-cols-1 gap-14 sm:gap-8 md:grid-cols-2 xl:col-span-2 xl:mt-0">

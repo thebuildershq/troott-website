@@ -1,6 +1,5 @@
 "use client";
 import { RiPlayCircleFill, RiUploadCloudFill } from "@remixicon/react";
-import Link from "next/link";
 import { Button } from "../Button";
 import { useState } from "react";
 import Newsletter from "../NewsletterModal";
@@ -38,8 +37,7 @@ export default function CTASection() {
             setRole("listener");
             setDialogOpen(true);
           }}
-        >
-          <Link href="#" className="flex items-center gap-x-2">
+        >          
             <span className="flex size-6 items-center justify-center rounded-full bg-gray-50 transition-all group-hover:bg-gray-200 dark:bg-gray-800 dark:group-hover:bg-gray-700">
               <RiPlayCircleFill
                 aria-hidden="true"
@@ -47,7 +45,6 @@ export default function CTASection() {
               />
             </span>
             Start listening
-          </Link>
         </Button>
 
         <Button

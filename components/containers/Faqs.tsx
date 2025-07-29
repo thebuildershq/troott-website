@@ -41,7 +41,7 @@ const faqs = [
 export function Faqs() {
   return (
     <section id="faqs" className="mt-32 sm:mt-36" aria-labelledby="faq-title">
-      <div className="flex flex-col items-center justify-center text-4xl text-center  sm:text-left sm:items-start sm:text-6xl md:text-7xl  gap-10 px-4 max-w-4xl mx-auto">
+      <div className="flex flex-col items-center justify-center text-4xl text-center  sm:text-left sm:items-start sm:text-6xl md:text-7xl  gap-10 px- max-w-4xl mx-auto">
         
         <div className="">
           <h2
@@ -55,7 +55,7 @@ export function Faqs() {
           </p>
         </div>
 
-        <div className="border border-gray-300 dark:border-neutral-900 rounded-md w-full text-left">
+        <div className="border p-6 border-gray-300 dark:border-neutral-900 rounded-md w-full text-left">
           <Accordion type="multiple" className="mx-auto">
             {faqs.map((item) => (
               <AccordionItem
