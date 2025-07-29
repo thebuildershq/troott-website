@@ -42,7 +42,7 @@ const files = [
   },
   {
     src: "/images/apostle-jd.jpg",
-    alt:"Apostle Joshua Selman",
+    alt:`Apostle Jesudamilare "JD" Adesegun-David`,
     width: 200,
     height: 200,
   },
