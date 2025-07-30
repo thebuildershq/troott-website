@@ -1,14 +1,14 @@
 import { RiArrowRightUpLine } from "@remixicon/react"
 import Link from "next/link"
 import { TroottLogo } from "@/public/TroottLogo"
-import ThemeSwitch from "../ThemeSwitch"
 
 const navigation = {
   product: [
-    { name: "Preachers", href: "#", external: false },
-    { name: "Listeners", href: "", external: false },
-    { name: "Partners", href: "#", external: false },
-    { name: "Features", href: "#", external: false },
+    { name: "Preachers", href: "#preacher", external: false },
+    { name: "Listeners", href: "#listener", external: false },
+    { name: "faqs", href: "#faqs", external: false },
+
+    
     
   ],
   resources: [
@@ -19,15 +19,14 @@ const navigation = {
   ],
   company: [
     { name: "About", href: "#", external: false },
-    { name: "Careers", href: "#", external: true },
+    
     { name: "Contact", href: "#", external: false },
     { name: "Changelog", href: "#", external: false },
   ],
   legal: [
-    { name: "Imprint", href: "#", external: false },
     { name: "Privacy", href: "#", external: false },
     { name: "Terms", href: "#", external: false },
-    { name: "DPA", href: "#", external: false },
+    
   ],
 }
 
@@ -42,9 +41,9 @@ export default function Footer() {
             Turning audio sermons into a tool for true discipleship. Built in
               Ogbomoso, made for the world.
             </p>
-            <div className="flex space-x-6">
+            {/* <div className="flex space-x-6">
               <ThemeSwitch />
-            </div>
+            </div> */}
             <div></div>
           </div>
           <div className="mt-16 grid grid-cols-1 gap-14 sm:gap-8 md:grid-cols-2 xl:col-span-2 xl:mt-0">

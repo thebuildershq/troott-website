@@ -1,3 +1,5 @@
+"use client"
+
 import { BellIcon, LibraryBigIcon, Share2Icon, UserRoundCheckIcon } from "lucide-react";
 import { cx } from "@/lib/utils";
 import AnimatedBeamMultipleOutputDemo from "../magicui/animated-beam-outputs";
@@ -21,31 +23,31 @@ const Icons = {
 }
 const files = [
   {
-    src: "/images/apst-joshua-selman.jpg",
-    alt:"Apostle Joshua Selman",
+    src: "/images/apst-tolu-agboola.jpg",
+    alt:"Apostle Tolu Agboola",
     width: 200,
     height: 200,
   },
   {
-    src: "/images/apst-joshua-selman.jpg",
-    alt:"Apostle Joshua Selman",
+    src: "/images/apst-arome-osayi.jpg",
+    alt:"Apostle Arome Osayi",
     width: 200,
     height: 200,
   },
   {
-    src: "/images/apst-joshua-selman.jpg",
-    alt:"Apostle Joshua Selman",
+    src: "/images/rev-felix-adejumo.jpg",
+    alt:"Rev Funke Felix Adejumo",
     width: 200,
     height: 200,
   },
   {
-    src: "/images/apst-joshua-selman.jpg",
-    alt:"Apostle Joshua Selman",
+    src: "/images/apostle-jd.jpg",
+    alt:`Apostle Jesudamilare "JD" Adesegun-David`,
     width: 200,
     height: 200,
   },
   {
-    src: "/images/apst-joshua-selman.jpg",
+    src: "/images/apst-joshua-selman-.jpg",
     alt:"Apostle Joshua Selman",
     width: 200,
     height: 200,
@@ -127,7 +129,7 @@ const features = [
 
 export function BentoDemo() {
   return (
-    <div className="mb-10 mx-2 md:mx-96">
+    <div className="mb-10 mx-2 sm:mxsm:mx-12 md:mx-24 lg:mx-96">
       <BentoGrid>
         {features.map((feature, idx) => (
           <BentoCard key={idx} {...feature} />

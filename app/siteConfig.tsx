@@ -5,9 +5,9 @@ export const siteConfig = {
     description: "listen your hundreds of favourite sermons on the go.",
     baseLinks: {
       home: "/",
-      listeners: '/',
-      preachers: "/",
-      faqs: "/",
+      listeners: '#listener',
+      preachers: "#preacher",
+      faqs: "#faqs",
       imprint: "/",
       privacy: "/",
       terms: "/",
