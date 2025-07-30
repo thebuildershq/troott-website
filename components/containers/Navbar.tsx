@@ -11,6 +11,7 @@ import {
   RiTwitterXLine,
   RiLinkedinLine,
 } from "@remixicon/react";
+import { track } from '@vercel/analytics';
 import Link from "next/link";
 import React from "react";
 import { TroottLogo } from "@/public/TroottLogo";
@@ -81,7 +82,8 @@ export function Navigation() {
             {/* Desktop CTA */}
             <Button
               onClick={() => {
-                setRole("preacher");
+                setRole("listener");
+                track('listenerSignup');
                 setDialogOpen(true);
               }}
               className="hidden h-10 font-semibold md:flex"
