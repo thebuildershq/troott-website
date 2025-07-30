@@ -1,6 +1,7 @@
 "use client";
 
 import { RiPlayCircleFill, RiUploadCloudFill } from "@remixicon/react";
+import { track } from '@vercel/analytics';
 import { Button } from "../Button";
 import HeroImage from "../ui/HeroImage";
 import { useState } from "react";
@@ -37,6 +38,7 @@ export default function HeroSection() {
           className="h-14 px-8 group gap-x-2 font-semibold md:h-12 md:px-6 text-base md:text-sm"
           onClick={() => {
             setRole("listener");
+            track('listenerSignup');
             setDialogOpen(true);
           }}
         >
@@ -57,6 +59,7 @@ export default function HeroSection() {
           className="h-14 px-8 md:h-12 md:px-6 group gap-x-2 bg-transparent font-semibold hover:bg-transparent dark:bg-transparent hover:dark:bg-transparent"
           onClick={() => {
             setRole("preacher");
+            track('preacherSignup');
             setDialogOpen(true);
           }}
         >
