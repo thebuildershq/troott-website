@@ -154,6 +154,14 @@ const config: Config = {
           "dialogContentShow 150ms cubic-bezier(0.16, 1, 0.3, 1)",
       },
     },
+    screens: {
+      xs: '360px',   // Samsung S8
+      se: '375px',   // iPhone SE
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+    },
   },
   plugins: [animate],
 };
