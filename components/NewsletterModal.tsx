@@ -183,6 +183,7 @@ export default function Newsletter(data: ISubscribeDialog) {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="container mx-auto sm:px-8 py-10 bg-white dark:bg-neutral-900 dark:text-white sm:max-w-[500px] items-start justify-start border border-neutral-900">
         <div className="mb-2 flex flex-col gap-2">
+
           <div className="mb-2 flex items-center justify-center">
             <Image
               src="/images/mail-icon.png"
@@ -191,13 +192,16 @@ export default function Newsletter(data: ISubscribeDialog) {
               height={100}
             />
           </div>
+
           <DialogHeader className="items-start justify-start">
-            <DialogTitle className="text-4xl sm:text-start dark:text-white">
-              Secure Your Spot Today
+            <DialogTitle className="text-5xl text-start dark:text-white">
+              Stay rooted in God’s word. Get in before others.
             </DialogTitle>
-            <DialogDescription className="sm:text-start dark:text-neutral-400">
-              Join the waitlist and be among the first to experience the app
-              that will transform your spiritual journey.
+
+            <DialogDescription className="text-start pt-4 dark:text-neutral-400">
+              Troott is the new mobile space for life-giving sermons
+              and spiritual nourishment, anytime, anywhere.
+              Signup below to get your invite:
             </DialogDescription>
           </DialogHeader>
         </div>
