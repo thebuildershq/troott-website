@@ -70,6 +70,7 @@ const features = [
       <Marquee
         pauseOnHover
         className="absolute top-10 h-80"
+        
         style={{
             maskImage: "linear-gradient(to top, transparent 40%, #000 100%)",
             WebkitMaskImage:

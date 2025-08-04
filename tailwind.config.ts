@@ -77,12 +77,12 @@ const config: Config = {
       },
       keyframes: {
         marquee: {
-          from: { transform: "translateX(0)" },
-          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-100%)" },
         },
         "marquee-vertical": {
-          from: { transform: "translateY(0)" },
-          to: { transform: "translateY(calc(-100% - var(--gap)))" },
+          "0%": { transform: "translateY(0%)" },
+          "100%": { transform: "translateY(-100%)" },
         },
         "slide-down": {
           "0%": { opacity: "0", transform: "translateY(-20px)" },
@@ -142,8 +142,10 @@ const config: Config = {
         "slide-down-fade": "slide-down-fade ease-in-out",
         "slide-up-fade": "slide-up-fade ease-in-out",
         hide: "hide 150ms cubic-bezier(0.16, 1, 0.3, 1)",
-        slideDownAndFade: "slideDownAndFade 150ms cubic-bezier(0.16, 1, 0.3, 1)",
-        slideLeftAndFade: "slideLeftAndFade 150ms cubic-bezier(0.16, 1, 0.3, 1)",
+        slideDownAndFade:
+          "slideDownAndFade 150ms cubic-bezier(0.16, 1, 0.3, 1)",
+        slideLeftAndFade:
+          "slideLeftAndFade 150ms cubic-bezier(0.16, 1, 0.3, 1)",
         slideRightAndFade:
           "slideRightAndFade 150ms cubic-bezier(0.16, 1, 0.3, 1)",
         accordionOpen: "accordionOpen 150ms cubic-bezier(0.87, 0, 0.13, 1)",
@@ -155,12 +157,12 @@ const config: Config = {
       },
     },
     screens: {
-      xs: '360px',   // Samsung S8
-      se: '375px',   // iPhone SE
-      sm: '640px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1280px',
+      xs: "360px", // Samsung S8
+      se: "375px", // iPhone SE
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
     },
   },
   plugins: [animate],
