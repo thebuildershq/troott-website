@@ -137,6 +137,7 @@ const config: Config = {
         },
       },
       animation: {
+         reveal: 'reveal var(--duration) ease-in-out forwards',
         marquee: "marquee var(--duration) linear infinite",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
         "slide-down": "slide-down 0.4s ease-out",
