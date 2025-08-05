@@ -71,7 +71,7 @@ const features = [
       <>
       <Marquee
         pauseOnHover
-        className="absolute top-10 h-80 "
+        className="absolute top-10 h-80 [--duration:10s] "    
         style={{
             maskImage: "linear-gradient(to top, transparent 40%, #000 100%)",
             WebkitMaskImage:
@@ -86,7 +86,7 @@ const features = [
             <figure
               key={idx}
               className={cx(
-                " animate-marquee [--duration:20s]relative w-32 cursor-pointer overflow-hidden rounded-xl border p-4",
+                "relative w-32 cursor-pointer overflow-hidden rounded-xl border p-4",
                 "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
                 "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
                 "transform-gpu blur-[1px] transition-all duration-300 ease-out hover:blur-none"

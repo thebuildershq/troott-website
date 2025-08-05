@@ -144,51 +144,55 @@ const Icons = {
       width={100}
       height={100}
       unoptimized
+      className="rounded-full"
     />
   ),
   isa: () => (
     <Image
       src="/images/abubakar-isa.jpg"
-      alt="Troott Logo"
+      alt=""
       unoptimized
       fill
-      className=" overflow-hidden object-cover"
+      className="rounded-full overflow-hidden object-cover"
     />
   ),
   jay: () => (
     <Image
       src="/images/jay-soundo.jpg"
-      alt="Troott Logo"
+      alt=""
       unoptimized
       fill
-      className="object-cover"
+      className="object-fill rounded-full overflow-hidden"
     />
   ),
   fourty: () => (
     <Image
       src="/images/fourty-four.jpg"
-      alt="Troott Logo"
+      alt=""
       width={100}
       height={100}
       unoptimized
+      className="object-fill rounded-full overflow-hidden"
     />
   ),
   shew: () => (
     <Image
       src="/images/abenezer-shewaga.jpg"
-      alt="Troott Logo"
-      width={100}
-      height={100}
+      alt=""
+      width={400}
+      height={400}
       unoptimized
+      className="object-cover rounded-full overflow-hidden"
     />
   ),
   bave: () => (
     <Image
       src="/images/bave-pictures.jpg"
       alt="Troott Logo"
-      width={100}
-      height={100}
+      width={200}
+      height={200}
       unoptimized
+      className="rounded-full object-cover overflow-hidden"
     />
   ),
 
