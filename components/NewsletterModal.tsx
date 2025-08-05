@@ -195,7 +195,7 @@ export default function Newsletter(data: ISubscribeDialog) {
 
           <DialogHeader className="items-start justify-start">
             <DialogTitle className="text-5xl text-start dark:text-white">
-              Stay rooted in God’s word. Get in before others.
+              Stay rooted in God’s word. Get early access!
             </DialogTitle>
 
             <DialogDescription className="text-start pt-4 dark:text-neutral-400">
@@ -305,7 +305,7 @@ export default function Newsletter(data: ISubscribeDialog) {
               errors.email && touched.email ? "firstName-error" : undefined
             }
           >
-            {isSubmitting ? "Submitting..." : "Join Waitlist"}
+            {isSubmitting ? "Submitting..." : "Sgn up now"}
           </Button>
         </form>
       </DialogContent>
