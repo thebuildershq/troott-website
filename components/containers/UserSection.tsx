@@ -69,13 +69,12 @@ const features = [
     background: (
       <Marquee
         pauseOnHover
-        className="absolute top-10 h-80"
+        className="absolute top-10 h-80 [--duration:10s]"
         
         style={{
             maskImage: "linear-gradient(to top, transparent 40%, #000 100%)",
             WebkitMaskImage:
               "linear-gradient(to top, transparent 40%, #000 100%)",
-            "--duration": "10s",
           } as React.CSSProperties
         }
       >
