@@ -65,15 +65,20 @@ const features = [
     description: "Easy to find preachers, just tap and listen.",
     href: "",
     cta: "",
-    className: "col-span-3 lg:col-span-1",
+    className: "col-span-3 lg:col-span-1 z-0 relative",
     background: (
+
+      <>
+      <div className="absolute inset-0 z-0 overflow-hidden h-80">
+      {/* Gradient fade at the top */}
+      <div className="pointer-events-none absolute top-0 left-0 w-full h-20 z-10 bg-gradient-to-b from-black to-transparent dark:from-white dark:to-transparent" />
+
+      {/* Scrolling background marquee */}
       <Marquee
         pauseOnHover
-        className="absolute top-10 h-80 animate-reveal [--duration:10s]"    
-        style={{
-            maskImage: "linear-gradient(to top, transparent 40%, #000 100%)",
-            WebkitMaskImage:
-              "linear-gradient(to top, transparent 40%, #000 100%)",
+        className="h-full animate-reveal [--gap:0rem]"
+        style={
+          {
             "--duration": "10s",
           } as React.CSSProperties
         }
@@ -84,7 +89,7 @@ const features = [
             <figure
               key={idx}
               className={cx(
-                "relative w-32 cursor-pointer overflow-hidden rounded-xl border p-4",
+                "relative w-32 mx-2 cursor-pointer overflow-hidden rounded-xl border p-4",
                 "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
                 "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
                 "transform-gpu blur-[1px] transition-all duration-300 ease-out hover:blur-none"
@@ -94,11 +99,14 @@ const features = [
                 src={f.src as string}
                 alt=""
                 fill
-                className="h-full w-full object-cover "
+                className="h-full w-full object-cover"
               />
             </figure>
           ))}
       </Marquee>
+    </div>
+      </>
+      
     ),
   },
   {
