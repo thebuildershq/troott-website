@@ -17,6 +17,7 @@ const config: Config = {
     "slide-down",
     "slide-down-fade",
     "slide-up-fade",
+    "[--duration:10s]",
   ],
   theme: {
     extend: {

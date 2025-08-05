@@ -75,6 +75,7 @@ const features = [
             maskImage: "linear-gradient(to top, transparent 40%, #000 100%)",
             WebkitMaskImage:
               "linear-gradient(to top, transparent 40%, #000 100%)",
+            "--duration": "10s",
           } as React.CSSProperties
         }
       >
