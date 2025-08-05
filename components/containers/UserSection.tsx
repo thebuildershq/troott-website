@@ -1,13 +1,17 @@
-"use client"
+"use client";
 
-import { BellIcon, LibraryBigIcon, Share2Icon, UserRoundCheckIcon } from "lucide-react";
+import {
+  BellIcon,
+  LibraryBigIcon,
+  Share2Icon,
+  UserRoundCheckIcon,
+} from "lucide-react";
 import { cx } from "@/lib/utils";
 import AnimatedBeamMultipleOutputDemo from "../magicui/animated-beam-outputs";
 import AnimatedListDemo from "../magicui/animated-list-demo";
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import { Marquee } from "@/components/magicui/marquee";
 import Image from "next/image";
-
 
 const Icons = {
   playlist: () => (
@@ -20,35 +24,35 @@ const Icons = {
       className="absolute top-10 w-full h-full flex justify-end items-end px-10 [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)]"
     />
   ),
-}
+};
 const files = [
   {
     src: "/images/apst-tolu-agboola.jpg",
-    alt:"Apostle Tolu Agboola",
+    alt: "Apostle Tolu Agboola",
     width: 200,
     height: 200,
   },
   {
     src: "/images/apst-arome-osayi.jpg",
-    alt:"Apostle Arome Osayi",
+    alt: "Apostle Arome Osayi",
     width: 200,
     height: 200,
   },
   {
     src: "/images/rev-felix-adejumo.jpg",
-    alt:"Rev Funke Felix Adejumo",
+    alt: "Rev Funke Felix Adejumo",
     width: 200,
     height: 200,
   },
   {
     src: "/images/apostle-jd.jpg",
-    alt:`Apostle Jesudamilare "JD" Adesegun-David`,
+    alt: `Apostle Jesudamilare "JD" Adesegun-David`,
     width: 200,
     height: 200,
   },
   {
     src: "/images/apst-joshua-selman-.jpg",
-    alt:"Apostle Joshua Selman",
+    alt: "Apostle Joshua Selman",
     width: 200,
     height: 200,
   },
@@ -63,9 +67,18 @@ const features = [
     cta: "",
     className: "col-span-3 lg:col-span-1",
     background: (
+
+      <>
       <Marquee
         pauseOnHover
-        className="absolute top-10 [--duration:10s] h-80 [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] "
+        className="absolute top-10 h-80 "
+        style={{
+            maskImage: "linear-gradient(to top, transparent 40%, #000 100%)",
+            WebkitMaskImage:
+              "linear-gradient(to top, transparent 40%, #000 100%)",
+            "--duration": "10s",
+          } as React.CSSProperties
+        }
       >
         {files
           .filter((f) => f.src)
@@ -73,7 +86,7 @@ const features = [
             <figure
               key={idx}
               className={cx(
-                "relative w-32 cursor-pointer overflow-hidden rounded-xl border p-4",
+                " animate-marquee [--duration:20s]relative w-32 cursor-pointer overflow-hidden rounded-xl border p-4",
                 "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
                 "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
                 "transform-gpu blur-[1px] transition-all duration-300 ease-out hover:blur-none"
@@ -88,6 +101,10 @@ const features = [
             </figure>
           ))}
       </Marquee>
+
+      
+      </>
+      
     ),
   },
   {
@@ -119,9 +136,7 @@ const features = [
     className: "col-span-3 lg:col-span-1",
     href: "",
     cta: "",
-    background: (
-      <Icons.playlist/>
-    ),
+    background: <Icons.playlist />,
   },
 ];
 
