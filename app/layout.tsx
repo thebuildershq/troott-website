@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from "@vercel/analytics/next";
 import localFont from "next/font/local";
 import { siteConfig } from "./siteConfig";
 import { Navigation } from "@/components/containers/Navbar";
@@ -75,11 +75,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://troott.com"),
   title: siteConfig.name,
   description: siteConfig.description,
-  keywords: ["Sermons", "Preachers", "Joshua Selman"],
+  keywords: ["sermons", "preachers", "teachings", "troott", "messages"],
   authors: [
     {
       name: "troott technologies",
-      url: "",
+      url: "https://www.troott.com",
     },
   ],
   creator: "troott technologies",
@@ -90,16 +90,31 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.image,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
     creator: "@thetroott",
+    images: [siteConfig.image],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: siteConfig.image,
+    shortcut: siteConfig.image,
+    apple: siteConfig.image,
   },
+  robots: {
+      index: true,
+      follow: true,
+    },
 };
 
 export default function RootLayout({
@@ -110,7 +125,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <MailerLiteScript/>
+        <MailerLiteScript />
       </head>
       <body
         className={`${matter.className} min-h-screen p-4 scroll-auto antialiased selection:bg-cyan-400 selection:text-cyan-700 dark:bg-neutral-950`}
@@ -130,8 +145,7 @@ export default function RootLayout({
           {/* </ErrorBoundary> */}
         </ThemeProvider>
 
-        <Analytics/>
-
+        <Analytics />
       </body>
     </html>
   );
