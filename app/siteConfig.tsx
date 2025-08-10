@@ -1,15 +1,16 @@
 
 export const siteConfig = {
-    name: "troott - listen your hundreds of favourite sermons on the go.",
+    name: "troott",
     url: "https://troott.com",
-    description: "listen your hundreds of favourite sermons on the go.",
+    description: "the new mobile space for life-giving sermons and teachings.",
+    image: "https://www.troott.com/images/troott-icon.svg",
     baseLinks: {
       home: "/",
       listeners: '#listener',
       preachers: "#preacher",
       faqs: "#faqs",
       imprint: "/",
-      privacy: "/",
+      privacy: "/https://troott.notion.site/Troott-Privacy-Policy-24bb2bbd63c7806382bcfffe3fe1a1bf",
       terms: "/",
     },
   }

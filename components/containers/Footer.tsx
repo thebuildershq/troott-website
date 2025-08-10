@@ -14,17 +14,14 @@ const navigation = {
   resources: [
     { name: "X (Twitter)", href: "https://x.com/thetroott", external: true },
     { name: "LinkedIn", href: "https://www.linkedin.com/company/troott", external: true },
-    { name: "Facebook", href: "#", external: true },
-    { name: "Instagram", href: "#", external: true },
+  
   ],
   company: [
     { name: "About", href: "#", external: false },
-    
-    { name: "Contact", href: "#", external: false },
-    { name: "Changelog", href: "#", external: false },
+    { name: "Contact", href: "mailto:hello@troott.com", external: false },
   ],
   legal: [
-    { name: "Privacy", href: "#", external: false },
+    { name: "Privacy", href: "https://troott.notion.site/Troott-Privacy-Policy-24bb2bbd63c7806382bcfffe3fe1a1bf", external: true },
     { name: "Terms", href: "#", external: false },
     
   ],
@@ -38,8 +35,7 @@ export default function Footer() {
           <div className="space-y-8">
             <TroottLogo className="w-32 sm:w-40" />
             <p className="text-sm leading-6 text-gray-600 dark:text-gray-400">
-            Turning audio sermons into a tool for true discipleship. Built in
-              Ogbomoso, made for the world.
+            Turning audio sermons into a tool for true discipleship. Made with ❤️ in Nigeria, crafted for the world.
             </p>
             {/* <div className="flex space-x-6">
               <ThemeSwitch />

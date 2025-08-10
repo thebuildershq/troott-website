@@ -198,7 +198,7 @@ export default function Newsletter(data: ISubscribeDialog) {
               Stay rooted in God’s word. Get early access!
             </DialogTitle>
 
-            <DialogDescription className="text-start pt-4 dark:text-neutral-400">
+            <DialogDescription className="text-start text-lg pt-4 dark:text-neutral-400">
               Troott is the new mobile space for life-giving sermons
               and spiritual nourishment, anytime, anywhere.
               Signup below to get your invite:
@@ -218,7 +218,7 @@ export default function Newsletter(data: ISubscribeDialog) {
                 onChange={handleInputChange("firstName")}
                 onBlur={handleBlur("firstName")}
                 className={cx(
-                  "pl-10 h-12 border text-muted-foreground", // base thin border
+                  "pl-10 h-12 border text-muted-foreground text-[16px]", // base thin border
                   "focus:border-teal-400 dark:focus:border-teal-400 focus:outline-none",
                   "dark:border-neutral-700 dark:text-neutral-300",
                   errors.firstName && touched.firstName && "border-destructive"
@@ -248,7 +248,7 @@ export default function Newsletter(data: ISubscribeDialog) {
                 onChange={handleInputChange("email")}
                 onBlur={handleBlur("email")}
                 className={cx(
-                  "pl-10 h-12 border text-muted-foreground",
+                  "pl-10 h-12 border text-muted-foreground text-[16px]",
                   "focus:border-teal-400 dark:focus:border-teal-400 focus:outline-none",
                   "dark:border-neutral-700 dark:text-neutral-300",
                   errors.email && touched.email && "border-destructive"
@@ -294,7 +294,7 @@ export default function Newsletter(data: ISubscribeDialog) {
             }
             onClick={handleSubmit}
             className={cx(
-              "pl-10 h-12 disabled:opacity-50 disabled:cursor-not-allowed",
+              "pl-10 h-12 disabled:opacity-50 disabled:cursor-not-allowed text-lg items-center justify-center",
               "w-full dark:bg-teal-400 dark:text-neutral-900 dark:hover:bg-teal-300",
               errors.email &&
                 touched.email &&
@@ -305,7 +305,7 @@ export default function Newsletter(data: ISubscribeDialog) {
               errors.email && touched.email ? "firstName-error" : undefined
             }
           >
-            {isSubmitting ? "Submitting..." : "Sgn up now"}
+            {isSubmitting ? "Submitting..." : "Sign me up"}
           </Button>
         </form>
       </DialogContent>
