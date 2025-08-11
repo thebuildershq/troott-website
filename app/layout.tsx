@@ -75,7 +75,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://troott.com"),
   title: siteConfig.name,
   description: siteConfig.description,
-  keywords: ["sermons", "preachers", "teachings", "troott", "messages"],
+  keywords: ["sermons", "preachers", "teachings", "troott", "messages", "bible", "faith", "christianity", "fellowship", "prayer", "worship"],
   authors: [
     {
       name: "troott technologies",

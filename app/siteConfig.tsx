@@ -1,9 +1,9 @@
 
 export const siteConfig = {
-    name: "troott",
+    name: "Troott - The new mobile space for sermons and teachings",
     url: "https://troott.com",
-    description: "the new mobile space for life-giving sermons and teachings.",
-    image: "https://www.troott.com/images/icon.png",
+    description: "Troott helps you stay rooted in God’s Word. You find, listen to teachings and sermsons and share with friends and family - no distractions, no interruptions.",
+    image: "https://www.troott.com/images/troott-og.png",
     baseLinks: {
       home: "/",
       listeners: '#listener',
