@@ -3,7 +3,7 @@ export const siteConfig = {
     name: "troott",
     url: "https://troott.com",
     description: "the new mobile space for life-giving sermons and teachings.",
-    image: "https://www.troott.com/images/troott-icon.svg",
+    image: "https://www.troott.com/images/icon.png",
     baseLinks: {
       home: "/",
       listeners: '#listener',
