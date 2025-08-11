@@ -3,10 +3,10 @@ import type { ImageProps } from "next/image";
 
 export const TroottLogo = (props: Omit<ImageProps, "src" | "alt">) => (
   <Image
-    src="/images/troott-icon.svg"
+    src="/images/troott.svg"
     alt="Troott Logo"
-    width={100}
-    height={100}
+    width={10}
+    height={10}
     unoptimized
     {...props}
   />

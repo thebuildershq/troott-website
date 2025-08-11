@@ -139,7 +139,7 @@ export default function AnimatedBeamMultipleOutputDemo({
 const Icons = {
   troott: () => (
     <Image
-      src="/images/troott-icon.svg"
+      src="/images/icon.png"
       alt="Troott Logo"
       width={100}
       height={100}
