@@ -35,13 +35,14 @@ export default function Newsletter(data: ISubscribeDialog) {
     agree: false,
     location: "",
   });
-
+  
+  // Initialize form data with user type
   useEffect(() => {
   if (open) {
     setFormData((f) => ({
       ...f,
       location: f.location,
-      user_type, // always refresh from props
+      user_type, 
     }));
   }
 }, [open, user_type]);
